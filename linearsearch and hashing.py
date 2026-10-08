@@ -164,3 +164,20 @@ print(binsearch(names5,user))
 binend = time.perf_counter()
 bintotal = binend - binstart
 print(f"{bintotal:.40f}")
+
+def insertionsort(names3):
+    # Think about what the pointer and the key represent
+    # They cannot remain 0 and 1 - how do they have to change and why?
+    
+    pointer = 0      
+    key = 1
+
+    while key<len(names3):
+        temp = names3[key]
+        if temp < names3[pointer]:
+                names3[key] = names3[pointer]
+                pointer=pointer-1
+        else:
+            names3[pointer+1] = temp        
+
+        
